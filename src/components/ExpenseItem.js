@@ -2,7 +2,7 @@ import React from 'react';
 
 const ExpenseItem = () => {
   return (
-    <div>ExpenseItem</div>
+    <div>Expense Items</div>
   )
 }
 
