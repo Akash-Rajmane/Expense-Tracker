@@ -1,9 +1,10 @@
+import React, {useState} from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
 
 
 function App() {
-  const expenses = [
+  const [expenses,setExpenses] = useState([
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -31,11 +32,17 @@ function App() {
       date: new Date(2021, 5, 12),
       location: "Pune"
     },
-  ];
+  ])
+  
+
+  const deleteHandler = (id) => {
+    let newExpenses = expenses.filter(el=>el.id!==id);
+    setExpenses(newExpenses);
+  }
 
   return (
     <div className="App">
-     <Expenses expenses={expenses}/>
+     <Expenses expenses={expenses} deleteHandler={deleteHandler}/>
     </div>
   );
 }

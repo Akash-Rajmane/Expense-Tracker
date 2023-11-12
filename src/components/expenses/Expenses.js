@@ -6,7 +6,7 @@ const Expenses = (props) => {
   return (
     <Card>{props.expenses.map(el=>{
         return(
-          <ExpenseItem title={el.title} amount={el.amount} date={el.date} location={el.location}/>
+          <ExpenseItem key={el.id} title={el.title} amount={el.amount} date={el.date} location={el.location} deleteHandler={()=>props.deleteHandler(el.id)}/>
         )
        })}
     </Card>
