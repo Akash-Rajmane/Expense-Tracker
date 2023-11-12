@@ -37,6 +37,7 @@ function App() {
   ])
 
   const [filteredYear, setFilteredYear] = useState("");
+  const [show, setShow] = useState(true);
   
   const filterChangeHandler = (year) => {
     setFilteredYear(year);
@@ -54,7 +55,8 @@ function App() {
 
   return (
     <div className="App">
-      <NewExpense onAddExpense={addExpenseHandler}/>
+      {show && <button onClick={()=>setShow(!show)} className='btn'>Add New Expense</button>}
+      {!show && <NewExpense onAddExpense={addExpenseHandler} setShow={setShow}/>}
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
       <Expenses expenses={expenses} deleteHandler={deleteHandler} selected={filteredYear}/>
     </div>

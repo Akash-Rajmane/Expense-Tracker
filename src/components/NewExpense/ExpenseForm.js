@@ -53,6 +53,7 @@ const submitHandler = (e) => {
     setTitle("");
     setAmount("");
     setDate("");
+    props.setShow(true);
 }
 
   return (
@@ -72,6 +73,7 @@ const submitHandler = (e) => {
             </div>
         </div>
         <div className='new-expense__actions'>
+            <button type="button" onClick={()=>props.setShow(true)}>Cancel</button>
             <button type='submit'>Add Expense</button>
         </div>
     </form>
