@@ -5,6 +5,7 @@ import NewExpense from './components/NewExpense/NewExpense';
 import ExpensesFilter from './components/expenses/ExpensesFilter';
 
 
+
 function App() {
   const [expenses,setExpenses] = useState([
     {
@@ -37,7 +38,7 @@ function App() {
   ])
 
   const [filteredYear, setFilteredYear] = useState("");
-  const [show, setShow] = useState(true);
+  
   
   const filterChangeHandler = (year) => {
     setFilteredYear(year);
@@ -55,10 +56,10 @@ function App() {
 
   return (
     <div className="App">
-      {show && <button onClick={()=>setShow(!show)} className='btn'>Add New Expense</button>}
-      {!show && <NewExpense onAddExpense={addExpenseHandler} setShow={setShow}/>}
+      <NewExpense onAddExpense={addExpenseHandler} />
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
       <Expenses expenses={expenses} deleteHandler={deleteHandler} selected={filteredYear}/>
+      
     </div>
   );
 }
