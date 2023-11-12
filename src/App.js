@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 
 function App() {
@@ -42,7 +43,8 @@ function App() {
 
   return (
     <div className="App">
-     <Expenses expenses={expenses} deleteHandler={deleteHandler}/>
+      <NewExpense/>
+      <Expenses expenses={expenses} deleteHandler={deleteHandler}/>
     </div>
   );
 }
