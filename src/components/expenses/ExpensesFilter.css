@@ -1,0 +1,26 @@
+.expenses-filter{
+    margin: 15px 0;
+}
+
+.expenses-filter__control{
+   color: #40005d;
+}
+
+.expenses-filter__control label{
+    margin-right: 5px;
+    font-size: 18px;
+    color: #40005d;
+} 
+
+.expenses-filter__control select{
+    font-size: 18px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #40005d;
+} 
+
+.expenses-filter__control select option{
+    color: white;
+    background-color: #40005d;
+} 
+

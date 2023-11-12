@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Expenses from './components/expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
+import ExpensesFilter from './components/expenses/ExpensesFilter';
 
 
 function App() {
@@ -34,7 +35,12 @@ function App() {
       location: "Pune"
     },
   ])
+
+  const [filteredYear, setFilteredYear] = useState("2020");
   
+  const filterChangeHandler = (year) => {
+    setFilteredYear(year);
+  }
 
   const deleteHandler = (id) => {
     let newExpenses = expenses.filter(el=>el.id!==id);
@@ -49,6 +55,7 @@ function App() {
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler}/>
+      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
       <Expenses expenses={expenses} deleteHandler={deleteHandler}/>
     </div>
   );
