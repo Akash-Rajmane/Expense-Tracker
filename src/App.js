@@ -36,7 +36,7 @@ function App() {
     },
   ])
 
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("");
   
   const filterChangeHandler = (year) => {
     setFilteredYear(year);
@@ -56,7 +56,7 @@ function App() {
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler}/>
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-      <Expenses expenses={expenses} deleteHandler={deleteHandler}/>
+      <Expenses expenses={expenses} deleteHandler={deleteHandler} selected={filteredYear}/>
     </div>
   );
 }
