@@ -41,9 +41,14 @@ function App() {
     setExpenses(newExpenses);
   }
 
+  const addExpenseHandler = (expense) => {
+    let newExpenses = [...expenses, expense];
+    setExpenses(newExpenses);
+  }
+
   return (
     <div className="App">
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses} deleteHandler={deleteHandler}/>
     </div>
   );
